@@ -1,0 +1,13 @@
+docker run \
+--rm \
+-it \
+-p 8888:8888 \
+--runtime=nvidia \
+--user ${USER} \
+-v ${PWD}:/workspace/code \
+--ipc=host \
+--ulimit memlock=-1 \
+--ulimit stack=67108864 \
+--gpus all \
+fastai \
+jupyter notebook
